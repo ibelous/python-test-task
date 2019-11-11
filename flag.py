@@ -9,14 +9,14 @@ def flag():
     if not n % 2 == 0:
         raise argparse.ArgumentError
 
-    Flag = '#'*(3*n+2)+'\n'+2*('#'+' '*3*n+'#'+'\n')
+    Flag = '#'*(3*n+2)+'\n'+int(n/2)*('#'+' '*3*n+'#'+'\n')
     for i in range(int(n/2), 0, -1):
         Flag += '#' + ' '*(n+i-1) + '*' + 'o'*2*(int(n/2) - i) + '*' + ' '*(n+i-1) + '#' + '\n'
 
     for i in range(1, int(n/2)+1):
         Flag += '#' + ' '*(n+i-1) + '*' + 'o'*2*(int(n/2) - i) + '*' + ' '*(n+i-1) + '#' + '\n'
 
-    Flag += 2*('#'+' '*3*n+'#'+'\n')+'#'*(3*n+2)+'\n'
+    Flag += int(n/2)*('#'+' '*3*n+'#'+'\n')+'#'*(3*n+2)+'\n'
     print(Flag)
 
 
